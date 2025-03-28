@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3/dist/css/bootstrap.css">
+    <style>
+      body{
+        margin: 0 auto;
+        background-color: #dfd5d5;
+
+      }
+      .product-card {
+          display: flex;
+          flex-wrap: wrap;
+          border: 3px solid #007bff;
+          border-radius: 15px;
+          overflow: hidden;
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .product-card:hover {
+          transform: scale(1.08);
+          box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      .product-title {
+          font-weight: bold;
+          color: #007bff;
+          font-size: 1.3rem;
+      }
+      .product-price {
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: #28a745;
+      }
+      .review-box {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .star-rating {
+            direction: rtl;
+            font-size: 1.5rem;
+            unicode-bidi: bidi-override;
+            cursor: pointer;
+        }
+        .star-rating span {
+            color: #dcdcdc;
+        }
+        .star-rating span:hover,
+        .star-rating span:hover ~ span {
+            color: #f8d210;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating input:checked ~ span {
+            color: #f8d210;
+        }
+        .contact-box {
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .product-card{
+            height: 100%;
+        }
+        
+  </style>
+  </head>
+  <body>
+    <div class="wrapper" style="overflow: hidden;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+            <div class="container" style="width: 1000px;">
+                <a class="navbar-brand" href="#">Shinalar Do'koni</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Bosh sahifa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Biz haqimizda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">Mahsulotlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#reviews">Mijozlar fikri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Bog'lanish</a></li>
+                    </ul>
+                    <div class="d-flex ms-3">
+                        <a href="#login" class="btn btn-light me-2">Kirish</a>
+                        <a href="#register" class="btn btn-warning">Ro'yxatdan o'tish</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Hero Bo'limi -->
+        <header class="hero text-white text-center bg-dark py-5">
+            <div class="container">
+                <h1>Shinalar Do'koniga Xush Kelibsiz</h1>
+                <h5>Har qanday avtomobil uchun yuqori sifatli shinalar</h5>
+            </div>
+        </header>
+    
+        <!-- Biz Haqimizda Bo'limi -->
+        <section id="about" class="container py-5" style="width:100% ">
+          <div class="card shadow-lg border-0 p-4 bg-light">
+              <h2 class="text-center text-primary mb-4">Biz haqimizda</h2>
+              <p class="text-muted text-center">Shinalar Do'koni – avtomobillar uchun eng sifatli va ishonchli shinalarni taqdim etuvchi yetakchi do‘konlardan biridir. Bizning maqsadimiz mijozlarimizga sifatli va bardoshli shinalarni arzon narxlarda yetkazib berishdir.</p>
+              <div class="row">
+                  <div class="col-md-6">
+                      <h4 class="text-primary">Biz taklif qilayotgan shinalar:</h4>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">✔ Yuqori sifatli, uzoq umr ko‘radigan shinalar.</li>
+                          <li class="list-group-item">✔ Turli xil avtomobillar uchun keng assortiment.</li>
+                          <li class="list-group-item">✔ Eng maqbul va arzon narxlar.</li>
+                          <li class="list-group-item">✔ Turli ob-havo sharoitlariga moslangan shinalar.</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-6 text-center">
+                      <img src="https://olcha.uz/image/original/category/NnPrDfxRshNwGKZK2EzKgKxRJjNLV64aXAcoQbNkjYajTyQ514NgCnfQXHxL.png" style="width: 350px;" alt="Shinalar" class="img-fluid rounded shadow-sm">
+                  </div>
+              </div>
+              <p class="mt-4 text-center" style="font-size: 19px;">Do‘konimizda sizga mos keladigan eng yaxshi shinalarni topishingiz mumkin!</p>
+          </div>
+        </section>
+    
+        <!-- Mahsulotlar Bo'limi -->
+        <section id="products" class="container py-5">
+          <div class="container" style="width: 100%;">
+            <h2 class="text-center text-primary mb-4">Mahsulotlar</h2>
+          <div class="row justify-content-center" style="gap:25px 0" >
+              <div class="col-md-4">
+                  <div class="card product-card text-center p-3" style="padding: 30px;">
+                      <img style="width: 300px;" src="https://www.brz.uz/uploads/product/5a385389a054d159af9d6ae3077a36a9.png" class="card-img-top" alt="Yozgi Shina">
+                      <div class="card-body">
+                          <h5 class="product-title">Avtomobil shinasi Imperi Minerva 195/65/R15, 6 dona </h5>
+                          <p class="product-price">664 000 so'm</p>
+                          <a href="#" class="btn btn-primary">Sotib olish</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card product-card text-center p-3">
+                    <img style="width: 100%;" src="image/rasm2.jpg" class="card-img-top" alt="Yozgi Shina">
+                    <div class="card-body">
+                        <h5 class="product-title">Avtomobil shinasi Imperi Minerva BARS SOLARFLEXX, 4 dona </h5>
+                        <p class="product-price">712 000 so'm</p>
+                        <a href="#" class="btn btn-primary">Sotib olish</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card product-card text-center p-3" style="padding: 30px;">
+                    <img style="width: 100%;" src="https://www.brz.uz/uploads/product/5a385389a054d159af9d6ae3077a36a9.png" class="card-img-top" alt="Yozgi Shina">
+                    <div class="card-body">
+                        <h5 class="product-title">Avtomobil shinasi Imperi Minerva 195/65/R15, 6 dona </h5>
+                        <p class="product-price">664 000 so'm</p>
+                        <a href="#" class="btn btn-primary">Sotib olish</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+              <div class="card product-card text-center p-3">
+                  <img style="width: 100%;" src="image/rasm2.jpg" class="card-img-top" alt="Yozgi Shina">
+                  <div class="card-body">
+                      <h5 class="product-title">Avtomobil shinasi Imperi Minerva BARS SOLARFLEXX, 4 dona </h5>
+                      <p class="product-price">712 000 so'm</p>
+                      <a href="#" class="btn btn-primary">Sotib olish</a>
+                  </div>
+              </div>
+              </div>
+              <div class="col-md-4">
+            <div class="card product-card text-center p-3">
+                <img style="width: 100%;" src="image/rasm7.png" class="card-img-top" alt="Yozgi Shina">
+                <div class="card-body">
+                    <h5 class="product-title">Avtomobil shinasi Imperi Minerva  BARS TIMEFLEX, 13 dona</h5>
+                    <p class="product-price">950 000 so'm</p>
+                    <a href="#" class="btn btn-primary">Sotib olish</a>
+                </div>
+            </div>
+              </div>
+              <div class="col-md-4">
+              <div class="card product-card text-center p-3">
+                  <img style="width: 100%;" src="image/rasm7.png" class="card-img-top" alt="Yozgi Shina">
+                  <div class="card-body">
+                      <h5 class="product-title">Avtomobil shinasi Imperi Minerva  BARS TIMEFLEX, 13 dona</h5>
+                      <p class="product-price">950 000 so'm</p>
+                      <a href="#" class="btn btn-primary">Sotib olish</a>
+                  </div>
+              </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="card product-card text-center p-3" style="padding: 30px;">
+                    <img style="width: 100%;" src="https://www.brz.uz/uploads/product/5a385389a054d159af9d6ae3077a36a9.png" class="card-img-top" alt="Yozgi Shina">
+                    <div class="card-body">
+                        <h5 class="product-title">Avtomobil shinasi Imperi Minerva 195/65/R15, 6 dona </h5>
+                        <p class="product-price">664 000 so'm</p>
+                        <a href="#" class="btn btn-primary">Sotib olish</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card product-card text-center p-3">
+                    <img style="width: 100%;" src="image/rasm2.jpg" class="card-img-top" alt="Yozgi Shina">
+                    <div class="card-body">
+                        <h5 class="product-title">Avtomobil shinasi Imperi Minerva BARS SOLARFLEXX, 4 dona </h5>
+                        <p class="product-price">712 000 so'm</p>
+                        <a href="#" class="btn btn-primary">Sotib olish</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+              <div class="card product-card text-center p-3">
+                  <img style="width: 100%;" src="image/rasm7.png" class="card-img-top" alt="Yozgi Shina">
+                  <div class="card-body">
+                      <h5 class="product-title">Avtomobil shinasi Imperi Minerva  BARS TIMEFLEX, 13 dona</h5>
+                      <p class="product-price">950 000 so'm</p>
+                      <a href="#" class="btn btn-primary">Sotib olish</a>
+                  </div>
+              </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card product-card text-center p-3" style="padding: 30px;">
+                    <img style="width: 100%;" src="https://www.brz.uz/uploads/product/5a385389a054d159af9d6ae3077a36a9.png" class="card-img-top" alt="Yozgi Shina">
+                    <div class="card-body">
+                        <h5 class="product-title">Avtomobil shinasi Imperi Minerva 195/65/R15, 6 dona </h5>
+                        <p class="product-price">664 000 so'm</p>
+                        <a href="#" class="btn btn-primary">Sotib olish</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+              <div class="card product-card text-center p-3">
+                  <img style="width: 100%;" src="image/rasm2.jpg" class="card-img-top" alt="Yozgi Shina">
+                  <div class="card-body">
+                      <h5 class="product-title">Avtomobil shinasi Imperi Minerva BARS SOLARFLEXX, 4 dona </h5>
+                      <p class="product-price">712 000 so'm</p>
+                      <a href="#" class="btn btn-primary">Sotib olish</a>
+                  </div>
+              </div>
+              </div>
+              <div class="col-md-4">
+            <div class="card product-card text-center p-3">
+                <img style="width: 100%;" src="image/rasm7.png" class="card-img-top" alt="Yozgi Shina">
+                <div class="card-body">
+                    <h5 class="product-title">Avtomobil shinasi Imperi Minerva  BARS TIMEFLEX, 13 dona</h5>
+                    <p class="product-price">950 000 so'm</p>
+                    <a href="#" class="btn btn-primary">Sotib olish</a>
+                </div>
+            </div>
+              </div>
+              <div class="col-md-4">
+              <div class="card product-card text-center p-3" style="padding: 30px;">
+                  <img style="width: 100%;" src="https://www.brz.uz/uploads/product/5a385389a054d159af9d6ae3077a36a9.png" class="card-img-top" alt="Yozgi Shina">
+                  <div class="card-body">
+                      <h5 class="product-title">Avtomobil shinasi Imperi Minerva 195/65/R15, 6 dona </h5>
+                      <p class="product-price">664 000 so'm</p>
+                      <a href="#" class="btn btn-primary">Sotib olish</a>
+                  </div>
+              </div>
+              </div>
+              <div class="col-md-4">
+            <div class="card product-card text-center p-3">
+                <img style="width: 100%;" src="image/rasm2.jpg" class="card-img-top" alt="Yozgi Shina">
+                <div class="card-body">
+                    <h5 class="product-title">Avtomobil shinasi Imperi Minerva BARS SOLARFLEXX, 4 dona </h5>
+                    <p class="product-price">712 000 so'm</p>
+                    <a href="#" class="btn btn-primary">Sotib olish</a>
+                </div>
+            </div>
+              </div>
+              <div class="col-md-4">
+          <div class="card product-card text-center p-3">
+              <img style="width: 100%;" src="image/rasm7.png" class="card-img-top" alt="Yozgi Shina">
+              <div class="card-body">
+                  <h5 class="product-title">Avtomobil shinasi Imperi Minerva  BARS TIMEFLEX, 13 dona</h5>
+                  <p class="product-price">950 000 so'm</p>
+                  <a href="#" class="btn btn-primary">Sotib olish</a>
+              </div>
+          </div>
+          </div>
+          </div>
+        </section>
+    
+        <section id="reviews" class="container py-5">
+          <h2 class="text-center text-primary mb-4">Mijozlar Fikri</h2>
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <div class="review-box">
+                      <h5>Izoh qoldiring</h5>
+                      <div class="mb-3">
+                          <label for="review-text" class="form-label">Fikringiz:</label>
+                          <textarea class="form-control" id="review-text" rows="3" placeholder="Izoh yozing..."></textarea>
+                      </div>
+                      <div class="mb-3">
+                          <label for="review-rating" class="for-label">Baholash:</label>
+                          <div class="star-rating">
+                              <input type="radio" name="star" id="star5"><span onclick="rate(5)">★</span>
+                              <input type="radio" name="star" id="star4"><span onclick="rate(4)">★</span>
+                              <input type="radio" name="star" id="star3"><span onclick="rate(3)">★</span>
+                              <input type="radio" name="star" id="star2"><span onclick="rate(2)">★</span>
+                              <input type="radio" name="star" id="star1"><span onclick="rate(1)">★</span>
+                          </div>
+                      </div>
+                      <button class="btn btn-primary">Jo'natish</button>
+                  </div>
+              </div>
+          </div>
+        </section>
+        <!-- Bog'lanish Bo'limi -->
+        <section id="contact" class="container py-5">
+          <h2 class="text-center text-success mb-4">Biz bilan bog'laning</h2>
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <div class="contact-box">
+                      <h5>Kontakt ma'lumotlari</h5>
+                      <p><strong>Telefon:</strong> +998 77 008 02 05</p>
+                      <p><strong>Email:</strong> xasanovshohzamon@gmail.com</p>
+                      <p><strong>Manzil:</strong> Surxandaryo, Termiz</p>
+                      <div class="ffff" >
+                        <a href=""><img  src="image/instagram.png" alt=""></a>
+                        <a href=""><img style="padding-left: 30px;" src="image/facebook (1).png" alt=""></a>
+                        <a href="">   <img style="padding-left: 30px;" src="image/telegram.png" alt=""></a>
+                        <a href=""><img style="padding-left: 30px;" src="image/twitter.png" alt=""></a>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+        </section>
+    </div>
+    <script>
+        function rate(stars) {
+            document.querySelectorAll('.star-rating input').forEach((input, index) => {
+                input.checked = (5 - index) <= stars;
+            });
+        }
+    </script>
+  
+    <script src="bootstrap-5.3.3/dist/js/bootstrap.js"></script>
+    <footer class="footer" style="text-align: center;">
+      <p>&copy; 2025 Shinalar Do'koni. Barcha huquqlar himoyalangan.</p>
+  </footer>
+  </body>
+</html>
